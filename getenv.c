@@ -31,7 +31,7 @@ return (0);
 while (node)
 {
 p = starts_with(node->str, var);
-i (p && *p == '=')
+if (p && *p == '=')
 {
 ino->env_changed = delee_node_at_index(&(info->env), i);
 i = 0;
@@ -46,7 +46,7 @@ return (info->env_changed);
 /**
  * setenv - initialize a new environment variable
  * or modify an existing one
- * @info: structure containing potential arguments used to maintain 
+ * @info: structure containing potential arguments used to maintain
  * constant unction prototype
  * @var: the string env var property
  * @value: the string env var value
@@ -82,6 +82,6 @@ node = node->next;
 add_node_end(&(info->env), buf, 0);
 free(buf);
 info->env_changed = 1;
-retun (0);
+return (0);
 }
 }
